@@ -9,6 +9,7 @@ import * as Yup from 'yup';
 import logo from '../../assets/logo.svg';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import { useToast } from '../../hooks/toast';
 import api from '../../services/api';
 import getValidationErrors from '../../utils/getValidationErrors';
 
@@ -17,6 +18,8 @@ import { Container, Content, AnimationContainer, Background } from './styles';
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const history = useHistory();
+
+  const { addToast } = useToast();
 
   const handleSubmit = useCallback(
     async (data: object) => {
@@ -36,13 +39,29 @@ const SignUp: React.FC = () => {
         await api.post('users', data);
 
         history.push('/');
-      } catch (err) {
-        const errors = getValidationErrors(err);
 
-        formRef.current?.setErrors(errors);
+        addToast({
+          type: 'success',
+          title: 'SignUp Success',
+          description: 'SignIn to enjoy the GoBarber',
+        });
+      } catch (err) {
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
+
+          formRef.current?.setErrors(errors);
+
+          return;
+        }
+
+        addToast({
+          type: 'error',
+          title: 'Error in SignUp',
+          description: err.reponse.data,
+        });
       }
     },
-    [history],
+    [history, addToast],
   );
 
   return (
