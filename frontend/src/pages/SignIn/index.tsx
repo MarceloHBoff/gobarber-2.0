@@ -53,11 +53,10 @@ const SignIn: React.FC = () => {
           return;
         }
 
-        console.log(err.reponse);
         addToast({
           type: 'error',
           title: 'Error in SignIn',
-          description: 'sadsljkah',
+          description: 'Email or password is invalid!',
         });
       }
     },

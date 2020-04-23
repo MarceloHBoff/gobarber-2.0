@@ -8,7 +8,7 @@ import {
 
 import { ToastMessage, useToast } from '../../../hooks/toast';
 
-import { Container } from './styles';
+import { Container, Time } from './styles';
 
 interface ToastProps {
   message: ToastMessage;
@@ -27,7 +27,7 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       removeToast(message.id);
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer);
@@ -50,6 +50,7 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
       <button onClick={() => removeToast(message.id)} type="button">
         <FiXCircle size={20} />
       </button>
+      <Time type={message.type} />
     </Container>
   );
 };

@@ -1,6 +1,7 @@
 import { animated } from 'react-spring';
 
-import styled, { css } from 'styled-components';
+import { shade, lighten } from 'polished';
+import styled, { css, keyframes } from 'styled-components';
 
 interface ToastProps {
   type?: 'success' | 'error' | 'info';
@@ -19,6 +20,27 @@ const toastTypeVariations = {
   error: css`
     background: #febaba;
     color: #940202;
+  `,
+};
+
+const timeGradient = {
+  info: css`
+    background: ${`linear-gradient(130deg, ${shade(0.3, '#024e75')}, ${lighten(
+      0.3,
+      '#024e75',
+    )})}`};
+  `,
+  success: css`
+    background: ${`linear-gradient(130deg, ${shade(0.3, '#027509')}, ${lighten(
+      0.3,
+      '#027509',
+    )})}`};
+  `,
+  error: css`
+    background: ${`linear-gradient(130deg, ${shade(0.3, '#940202')}, ${lighten(
+      0.3,
+      '#940202',
+    )})}`};
   `,
 };
 
@@ -70,4 +92,27 @@ export const Container = styled(animated.div)<ToastProps>`
         margin-top: 0;
       }
     `}
+`;
+
+const growthRight = keyframes`
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+export const Time = styled.div<{ type?: 'success' | 'error' | 'info' }>`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  animation: ${growthRight} 5s ease-in-out;
+  width: 100%;
+
+  border-radius: 0 0 10px 10px;
+  height: 8px;
+
+  ${props => timeGradient[props.type || 'info']}
 `;
