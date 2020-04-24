@@ -15,6 +15,12 @@ import getValidationErrors from '../../utils/getValidationErrors';
 
 import { Container, Content, AnimationContainer, Background } from './styles';
 
+interface SignUpFormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const history = useHistory();
@@ -22,7 +28,7 @@ const SignUp: React.FC = () => {
   const { addToast } = useToast();
 
   const handleSubmit = useCallback(
-    async (data: object) => {
+    async (data: SignUpFormData) => {
       try {
         formRef.current?.setErrors({});
 
@@ -57,7 +63,7 @@ const SignUp: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Error in SignUp',
-          description: err.reponse.data,
+          description: 'Error',
         });
       }
     },
