@@ -3,4 +3,6 @@ dist
 .env
 
 tmp/*
-!tmp/.gitkeep
+uploads/*
+!uploads
+!tmp

@@ -4,11 +4,11 @@ import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
 
+import routes from './routes';
+
 import UploadConfig from '@config/upload';
 
 import AppError from '@shared/errors/AppError';
-
-import routes from './routes';
 
 import '@shared/infra/typeorm';
 import '@shared/container';

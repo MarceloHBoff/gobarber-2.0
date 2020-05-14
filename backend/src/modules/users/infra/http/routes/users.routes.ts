@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import multer from 'multer';
 
-import UploadConfig from '@config/upload';
-
 import UserAvatarController from '../controllers/UserAvatarController';
 import UsersController from '../controllers/UsersController';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+
+import UploadConfig from '@config/upload';
 
 const usersRouter = Router();
 const usersController = new UsersController();

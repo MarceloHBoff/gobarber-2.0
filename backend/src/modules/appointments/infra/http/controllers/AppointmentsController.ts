@@ -13,8 +13,9 @@ export default class AppointmentsController {
     const createAppointment = container.resolve(CreateAppointmentService);
 
     const appointment = await createAppointment.execute({
-      date: parsedDate,
       provider_id,
+      user_id: request.user.id,
+      date: parsedDate,
     });
 
     return response.status(201).json(appointment);
