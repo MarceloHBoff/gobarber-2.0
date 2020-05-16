@@ -4,20 +4,24 @@ import CreateAppointmentService from './CreateAppointmentService';
 
 import FakeNotificationsRepository from '@modules/notifications/repositories/fakes/FakeNotificationsRepository';
 
+import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
 import AppError from '@shared/errors/AppError';
 
 let fakeNotificationsRepository: FakeNotificationsRepository;
 let fakeAppontimentsRepository: FakeAppontimentsRepository;
+let fakeCacheProvider: FakeCacheProvider;
 let createAppointment: CreateAppointmentService;
 
 describe('CreateAppointment', () => {
   beforeEach(() => {
     fakeAppontimentsRepository = new FakeAppontimentsRepository();
     fakeNotificationsRepository = new FakeNotificationsRepository();
+    fakeCacheProvider = new FakeCacheProvider();
 
     createAppointment = new CreateAppointmentService(
       fakeAppontimentsRepository,
       fakeNotificationsRepository,
+      fakeCacheProvider,
     );
 
     jest
