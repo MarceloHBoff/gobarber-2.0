@@ -28,11 +28,11 @@ export default class ResetPasswordService {
   public async execute({ password, token }: IRequest): Promise<void> {
     const userToken = await this.userTokensRepository.findByToken(token);
 
-    if (!userToken) throw new AppError('BUser token does not exists');
+    if (!userToken) throw new AppError('User token does not exists');
 
     const user = await this.userRepository.findById(userToken.user_id);
 
-    if (!user) throw new AppError('AUser token does not exists');
+    if (!user) throw new AppError('User token does not exists');
 
     const tokenCreatedAt = userToken.created_at;
     const compareDate = addHours(tokenCreatedAt, 2);

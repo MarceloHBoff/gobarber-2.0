@@ -4,6 +4,3 @@ dist
 
 ormconfig.json
 tmp/*
-uploads/*
-!uploads
-!tmp
