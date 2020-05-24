@@ -6,6 +6,6 @@ export const ProfilePut = celebrate({
     email: Joi.string().email().required(),
     old_password: Joi.string(),
     password: Joi.string(),
-    password_confirmation: Joi.string().required().valid(Joi.ref('password')),
+    password_confirmation: Joi.string().valid(Joi.ref('password')),
   },
 });
