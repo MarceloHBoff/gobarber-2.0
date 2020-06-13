@@ -7,10 +7,7 @@ const ContainerAdapter: React.FC = ({ children }) => (
     behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     enabled
   >
-    <ScrollView
-      contentContainerStyle={{ flex: 1 }}
-      keyboardShouldPersistTaps="handled"
-    >
+    <ScrollView contentContainerStyle={{ paddingBottom: 24 }}>
       {children}
     </ScrollView>
   </KeyboardAvoidingView>

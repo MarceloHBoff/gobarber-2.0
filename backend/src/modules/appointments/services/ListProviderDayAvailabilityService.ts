@@ -1,4 +1,4 @@
-import { getDaysInMonth, getDate, getHours, isAfter } from 'date-fns';
+import { getHours, isAfter } from 'date-fns';
 import { injectable, inject } from 'tsyringe';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
