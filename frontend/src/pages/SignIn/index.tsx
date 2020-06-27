@@ -4,7 +4,6 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
-import { hi } from 'date-fns/locale';
 import * as Yup from 'yup';
 
 import logo from '../../assets/logo.svg';
