@@ -117,7 +117,7 @@ const Profile: React.FC = () => {
         title: 'Select avatar',
         cancelButtonTitle: 'Cancel',
       },
-      async response => {
+      response => {
         if (response.didCancel) return;
 
         if (response.error) {
@@ -127,21 +127,17 @@ const Profile: React.FC = () => {
 
         const data = new FormData();
 
-        data.append('avatar', {
+        const file = {
           type: response.type,
           uri: String(response.uri),
           name: `${user.id}.jpg`,
-        });
-        console.log(response.uri);
+        };
 
-        try {
-          const responsed = await api.patch('/users/avatar', data);
-          console.log(responsed.status);
-          console.log(responsed.data);
-        } catch (err) {
-          console.log(err);
-        }
-        // .then(apiResponse => updatedUser(apiResponse.data));
+        data.append('avatar', file as any);
+
+        api
+          .patch('/users/avatar', data)
+          .then(apiResponse => updatedUser(apiResponse.data));
       },
     );
   }, []);
