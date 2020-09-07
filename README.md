@@ -17,7 +17,7 @@
 
 <h2>📔 Description</h2>
 
-## sdfds
+### App developed for bootcamp GoStack. This is a fullstack application to make appointments for hairstyle
 
 `Application`
 
