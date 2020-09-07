@@ -3,13 +3,13 @@
 </h2>
 
 <p align="center">
-  <img alt="GitHub top languages" src="https://img.shields.io/github/languages/top/MarceloHBoff/gobarber2.0.svg">
+  <img alt="GitHub top languages" src="https://img.shields.io/github/languages/top/MarceloHBoff/gobarber-2.0.svg">
 
-  <img alt="GitHub count languages" src="https://img.shields.io/github/languages/count/MarceloHBoff/gobarber2.0.svg">
+  <img alt="GitHub count languages" src="https://img.shields.io/github/languages/count/MarceloHBoff/gobarber-2.0.svg">
 
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/MarceloHBoff/gobarber2.0.svg">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/MarceloHBoff/gobarber-2.0.svg">
 
-  <img alt="GitHub license" src="https://img.shields.io/github/license/MarceloHBoff/gobarber2.0.svg">
+  <img alt="GitHub license" src="https://img.shields.io/github/license/MarceloHBoff/gobarber-2.0.svg">
 </p>
 
 <h2>📔 Description</h2>
