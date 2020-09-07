@@ -1,4 +1,3 @@
-<h2 align="center">GoBarber</h2>
 <h2 align="center">
   <img src="./.github/assets/logo.svg" />
 </h2>
