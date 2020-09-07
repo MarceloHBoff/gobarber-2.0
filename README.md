@@ -2,8 +2,6 @@
   <img src="./.github/assets/logo.svg" />
 </h2>
 
----
-
 <p align="center">
   <img alt="GitHub top languages" src="https://img.shields.io/github/languages/top/MarceloHBoff/gobarber2.0.svg">
 
