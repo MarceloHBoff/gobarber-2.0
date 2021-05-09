@@ -32,6 +32,12 @@
       { "prefixWithI": "always" }
     ],
     "no-useless-constructor": "off",
+    "no-plusplus": "off",
+    "no-await-in-loop": "off",
+    "no-empty": "off",
+    "no-loop-func": "off",
+    "no-param-reassign": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "import-helpers/order-imports": [
       "warn",
       {

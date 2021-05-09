@@ -20,6 +20,11 @@ export default class CreateAppointments1586987710942
             default: 'uuid_generate_v4()',
           },
           {
+            name: 'user_id',
+            type: 'uuid',
+            isNullable: true,
+          },
+          {
             name: 'provider_id',
             type: 'uuid',
             isNullable: true,
@@ -46,6 +51,18 @@ export default class CreateAppointments1586987710942
       'appointments',
       new TableForeignKey({
         columnNames: ['provider_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'users',
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE',
+      }),
+    );
+
+    await queryRunner.createForeignKey(
+      'appointments',
+      new TableForeignKey({
+        name: 'AppointmentsUser',
+        columnNames: ['user_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'users',
         onDelete: 'SET NULL',
